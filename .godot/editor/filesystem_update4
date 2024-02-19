@@ -1,0 +1,6 @@
+res://scene/crazy_cars/crazy_car.tscn
+res://scene/nokia_stratup.tscn
+res://main.tscn
+res://scene/crazy_cars/crazy_car_player.gd
+res://main.gd
+res://scene/crazy_cars/crazy_car_car.gd

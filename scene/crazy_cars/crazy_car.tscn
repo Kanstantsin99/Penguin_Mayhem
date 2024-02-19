@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://dofcpfb4gdk6n"]
+
+[ext_resource type="Script" path="res://scene/crazy_cars/crazy_car_player.gd" id="1_6ppl4"]
+[ext_resource type="Texture2D" uid="uid://bels0rls4iluc" path="res://scene/crazy_cars/player.png" id="2_2aavf"]
+[ext_resource type="Script" path="res://scene/crazy_cars/crazy_car_car.gd" id="3_gfi7a"]
+[ext_resource type="Texture2D" uid="uid://cy7db65jhprnh" path="res://scene/crazy_cars/floor.png" id="3_hh547"]
+[ext_resource type="Texture2D" uid="uid://cq1tsgkm8as2v" path="res://scene/crazy_cars/car.png" id="4_rnaf3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnrlw"]
+radius = 2.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxruw"]
+radius = 2.1
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1nry"]
+size = Vector2(6, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kweps"]
+size = Vector2(166, 6)
+
+[node name="CrazyCar" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Node2D"]
+position = Vector2(10, 29)
+script = ExtResource("1_6ppl4")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Node2D/Player"]
+texture = ExtResource("2_2aavf")
+region_enabled = true
+region_rect = Rect2(15, 28, 4, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player"]
+shape = SubResource("CapsuleShape2D_gnrlw")
+
+[node name="HitBox" type="Area2D" parent="Node2D/Player"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player/HitBox"]
+shape = SubResource("CapsuleShape2D_cxruw")
+
+[node name="Car" type="CharacterBody2D" parent="Node2D"]
+collision_layer = 3
+script = ExtResource("3_gfi7a")
+speed = 30.0
+
+[node name="CarSprite" type="Sprite2D" parent="Node2D/Car"]
+position = Vector2(80, 24)
+texture = ExtResource("4_rnaf3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Car"]
+polygon = PackedVector2Array(93, 36, 97, 36, 97, 35, 99, 35, 99, 34, 102, 34, 102, 33, 104, 33, 104, 32, 113, 32, 113, 33, 114, 33, 114, 34, 115, 34, 115, 35, 116, 35, 116, 36, 119, 36, 119, 40, 119, 42, 93, 42)
+
+[node name="Finish" type="Area2D" parent="Node2D/Car"]
+position = Vector2(-43, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Car/Finish"]
+shape = SubResource("RectangleShape2D_y1nry")
+
+[node name="Floor" type="StaticBody2D" parent="Node2D"]
+position = Vector2(42, 24)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Floor"]
+position = Vector2(1, 21)
+shape = SubResource("RectangleShape2D_kweps")
+
+[node name="FloorSprite" type="Sprite2D" parent="Node2D/Floor"]
+texture = ExtResource("3_hh547")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
