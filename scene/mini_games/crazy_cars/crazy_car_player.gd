@@ -4,6 +4,7 @@ signal player_died
 
 const JUMP_VELOCITY = -200
 
+var is_alive: bool = true
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var hit_box: Area2D = $HitBox
@@ -25,6 +26,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hit(body):
-	player_died.emit()
-	print("you're dead because of a " + str(body))
+func _on_hit(_body):
+	is_alive = false

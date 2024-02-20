@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://5udo2ndf0wju"]
+[gd_scene load_steps=9 format=3 uid="uid://5udo2ndf0wju"]
 
-[ext_resource type="Texture2D" uid="uid://dyckboetf4tsm" path="res://assets/img/splash-screen/nokia-background.png" id="1_3tnsw"]
-[ext_resource type="Texture2D" uid="uid://c28age8cc6amh" path="res://assets/img/splash-screen/nokia-logo.png" id="2_etaj7"]
-[ext_resource type="Texture2D" uid="uid://cxyn48012roxg" path="res://assets/img/splash-screen/nokia-left-hand.png" id="3_vfedv"]
-[ext_resource type="Texture2D" uid="uid://c718uuulroqd2" path="res://assets/img/splash-screen/nokia-right-hand.png" id="4_e762a"]
+[ext_resource type="Texture2D" uid="uid://dyckboetf4tsm" path="res://assets/img/splash-screen/nokia-background.png" id="1_eg75v"]
+[ext_resource type="Texture2D" uid="uid://cxyn48012roxg" path="res://assets/img/splash-screen/nokia-left-hand.png" id="2_k2p23"]
+[ext_resource type="Texture2D" uid="uid://c718uuulroqd2" path="res://assets/img/splash-screen/nokia-right-hand.png" id="3_2pktg"]
+[ext_resource type="Texture2D" uid="uid://c28age8cc6amh" path="res://assets/img/splash-screen/nokia-logo.png" id="4_1u1o1"]
+[ext_resource type="Script" path="res://scene/ui/nokia_startup.gd" id="5_tjk2n"]
 
 [sub_resource type="Animation" id="Animation_u2f00"]
 length = 0.001
@@ -214,7 +215,7 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"queue_free"
+"method": &"_queue_free"
 }]
 }
 
@@ -225,27 +226,28 @@ _data = {
 }
 
 [node name="NokiaStartup" type="Node"]
+script = ExtResource("5_tjk2n")
 
 [node name="Node2D" type="Node2D" parent="."]
 visible = false
 
 [node name="Nokia-background" type="Sprite2D" parent="Node2D"]
-texture = ExtResource("1_3tnsw")
+texture = ExtResource("1_eg75v")
 centered = false
 
 [node name="Nokia-left-hand" type="Sprite2D" parent="Node2D"]
 position = Vector2(-48, 25)
-texture = ExtResource("3_vfedv")
+texture = ExtResource("2_k2p23")
 centered = false
 
 [node name="Nokia-right-hand" type="Sprite2D" parent="Node2D"]
 position = Vector2(36, -12)
-texture = ExtResource("4_e762a")
+texture = ExtResource("3_2pktg")
 centered = false
 
 [node name="Nokia-logo" type="Sprite2D" parent="Node2D"]
 visible = false
-texture = ExtResource("2_etaj7")
+texture = ExtResource("4_1u1o1")
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="."]

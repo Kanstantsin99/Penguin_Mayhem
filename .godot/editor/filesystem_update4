@@ -1,6 +1,7 @@
-res://scene/crazy_cars/crazy_car.tscn
-res://scene/nokia_stratup.tscn
 res://main.tscn
-res://scene/crazy_cars/crazy_car_player.gd
+res://assets/theme/main-theme.tres
+res://scene/ui/nokia_stratup.tscn
+res://scene/ui/main_menu.tscn
+res://scene/ui/main_menu.gd
+res://scene/ui/nokia_startup.gd
 res://main.gd
-res://scene/crazy_cars/crazy_car_car.gd

@@ -1,8 +1,27 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dxpjsxjcktnp8"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dxpjsxjcktnp8"]
 
+[ext_resource type="FontFile" uid="uid://be7yxvccts3mi" path="res://assets/fonts/tiny/tiny.ttf" id="1_6hsav"]
 [ext_resource type="FontFile" uid="uid://cpxiyj34edml5" path="res://assets/fonts/nokia/nokiafc22.ttf" id="1_lmh1p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ai8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou6qp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt3fp"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrjqe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkgbe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2quu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 default_font = ExtResource("1_lmh1p")
@@ -16,3 +35,19 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/styles/normal = SubResource("StyleBoxEmpty_0ai8l")
+SmallButton/base_type = &"Button"
+SmallButton/colors/font_color = Color(0, 0, 0, 1)
+SmallButton/colors/font_disabled_color = Color(0, 0, 0, 1)
+SmallButton/colors/font_focus_color = Color(0, 0, 0, 1)
+SmallButton/colors/font_hover_color = Color(0, 0, 0, 1)
+SmallButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+SmallButton/colors/font_outline_color = Color(1, 1, 1, 1)
+SmallButton/colors/font_pressed_color = Color(0, 0, 0, 1)
+SmallButton/constants/outline_size = 5
+SmallButton/font_sizes/font_size = 9
+SmallButton/fonts/font = ExtResource("1_6hsav")
+SmallButton/styles/disabled = SubResource("StyleBoxFlat_ou6qp")
+SmallButton/styles/focus = SubResource("StyleBoxFlat_dt3fp")
+SmallButton/styles/hover = SubResource("StyleBoxFlat_vrjqe")
+SmallButton/styles/normal = SubResource("StyleBoxFlat_nkgbe")
+SmallButton/styles/pressed = SubResource("StyleBoxFlat_j2quu")

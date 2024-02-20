@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://2d75vqruuyb5"]
+
+[ext_resource type="Script" path="res://scene/ui/main_menu.gd" id="1_mfveh"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_mfveh")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_right = 84.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 3
+
+[node name="StartButton" type="Button" parent="Node2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="Node2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+text = "Exit"

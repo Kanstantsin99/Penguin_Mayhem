@@ -1,7 +1,14 @@
+Label
+TextureButton
+Button
+VBoxContainer
+PanelContainer
+MarginContainer
+Container
+Node
 CollisionShape2D
+Timer
 Area2D
 CollisionPolygon2D
 CharacterBody2D
 StaticBody2D
-AnimationPlayer
-AudioStreamPlayer2D
