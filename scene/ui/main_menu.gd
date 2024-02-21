@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _on_start():
 	print("Start pressed")
-	get_parent().switch_scene("res://scene/mini_games/crazy_cars/crazy_car.tscn")
+	get_parent().switch_scene("res://scene/mini_games/crazy_car/crazy_car.tscn")
 
 
 func _on_exit():

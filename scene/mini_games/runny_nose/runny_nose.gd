@@ -3,7 +3,7 @@ extends Node
 signal result(bool)
 
 @export var hand_speed = 80
-@export var drop_speed = 10
+@export var drop_speed = 5
 
 var is_on_nose: bool = false
 var nose_is_alive: bool = true
@@ -38,8 +38,8 @@ func _process(delta: float) -> void:
 
 
 func get_direction() -> Vector2:
-	var direction_x = Input.get_axis("move_left", "move_right")
-	var direction_y = Input.get_axis("move_up", "move_down")
+	var direction_x = Input.get_axis("ui_left", "ui_right")
+	var direction_y = Input.get_axis("ui_up", "ui_down")
 	return Vector2(direction_x, direction_y).normalized()
 
 

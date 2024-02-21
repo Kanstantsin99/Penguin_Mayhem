@@ -20,3 +20,6 @@ res://scene/mini_games/runny_nose/runny_nose.gd
 res://scene/mini_games/crazy_cars/crazy_car.tscn
 res://scene/autoload/screen_transition.gdshader
 res://scene/autoload/screen_transition.tscn
+res://scene/manager/ScoreManager.gd
+res://scene/mini_games/crazy_cars/crazy_car.gd
+res://scene/mini_games/crazy_car/crazy_car.tscn

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8gcub7w1ho6m"
-path="res://.godot/imported/background.png-a1789139d9588d1a3d66f0a603c6fb34.ctex"
+uid="uid://cy7db65jhprnh"
+path="res://.godot/imported/floor.png-28059d9a78eeee26361d2a70800c2e51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/mini_games/crazy_cars/background.png"
-dest_files=["res://.godot/imported/background.png-a1789139d9588d1a3d66f0a603c6fb34.ctex"]
+source_file="res://scene/mini_games/crazy_car/floor.png"
+dest_files=["res://.godot/imported/floor.png-28059d9a78eeee26361d2a70800c2e51.ctex"]
 
 [params]
 

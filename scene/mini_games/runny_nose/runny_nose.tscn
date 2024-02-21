@@ -15,7 +15,7 @@ height = 16.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33lnr"]
 size = Vector2(17, 23)
 
-[node name="runny_nose" type="Node"]
+[node name="RunnyNose" type="Node"]
 script = ExtResource("1_tmi7n")
 
 [node name="Node2D" type="Node2D" parent="."]
