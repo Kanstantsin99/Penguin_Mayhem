@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8dogscluigpr"]
+
+[ext_resource type="Script" path="res://scene/ui/name_selection.gd" id="1_5r1x6"]
+
+[node name="NameSelection" type="Node"]
+script = ExtResource("1_5r1x6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 84.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 3
+
+[node name="TypeYourName" type="Label" parent="Node2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Type your name
+"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="CenterContainer" parent="Node2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="Node2D/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Node2D/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+text = "OK"

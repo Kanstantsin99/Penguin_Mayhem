@@ -1,9 +1,14 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dxpjsxjcktnp8"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dxpjsxjcktnp8"]
 
 [ext_resource type="FontFile" uid="uid://be7yxvccts3mi" path="res://assets/fonts/tiny/tiny.ttf" id="1_6hsav"]
 [ext_resource type="FontFile" uid="uid://cpxiyj34edml5" path="res://assets/fonts/nokia/nokiafc22.ttf" id="1_lmh1p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ai8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7orri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uq05w"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou6qp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -35,6 +40,8 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/styles/normal = SubResource("StyleBoxEmpty_0ai8l")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_7orri")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_uq05w")
 SmallButton/base_type = &"Button"
 SmallButton/colors/font_color = Color(0, 0, 0, 1)
 SmallButton/colors/font_disabled_color = Color(0, 0, 0, 1)

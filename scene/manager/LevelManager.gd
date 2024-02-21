@@ -5,7 +5,8 @@ var current_scene = null
 
 
 func _ready() -> void:
-	switch_scene("res://scene/ui/nokia_stratup.tscn")
+	current_scene = load("res://scene/mini_games/runny_nose/runny_nose.tscn").instantiate()
+	add_child(current_scene)
 
 
 func switch_scene(res_path):

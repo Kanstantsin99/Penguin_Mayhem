@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_nrtmp"]
 [ext_resource type="Script" path="res://scene/manager/LevelManager.gd" id="2_46bao"]
 [ext_resource type="Shader" path="res://assets/shaders/nokia-3310.gdshader" id="3_dhqyx"]
-[ext_resource type="PackedScene" uid="uid://bsbe7rei2vqty" path="res://scene/autoloads/screen_transition.tscn" id="3_j6cxs"]
+[ext_resource type="PackedScene" uid="uid://bsbe7rei2vqty" path="res://scene/autoload/screen_transition.tscn" id="3_j6cxs"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l502v"]
 viewport_path = NodePath("SubViewportContainer/Screen")
