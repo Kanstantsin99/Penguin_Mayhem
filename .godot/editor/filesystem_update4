@@ -7,3 +7,5 @@ res://main.gd
 res://scene/manager/LevelManager.gd
 res://Screen.gd
 res://AspectRatioContainer.gd
+res://scene/autoloads/screen_transition.tscn
+res://scene/autoloads/screen_transition.gdshader

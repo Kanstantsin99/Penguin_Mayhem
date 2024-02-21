@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://pstqes7jcym2"]
+[gd_scene load_steps=7 format=3 uid="uid://pstqes7jcym2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nrtmp"]
 [ext_resource type="Script" path="res://scene/manager/LevelManager.gd" id="2_46bao"]
 [ext_resource type="Shader" path="res://assets/shaders/nokia-3310.gdshader" id="3_dhqyx"]
+[ext_resource type="PackedScene" uid="uid://bsbe7rei2vqty" path="res://scene/autoloads/screen_transition.tscn" id="3_j6cxs"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l502v"]
 viewport_path = NodePath("SubViewportContainer/Screen")
@@ -30,11 +31,15 @@ offset_bottom = 40.0
 unique_name_in_owner = true
 disable_3d = true
 transparent_bg = true
+handle_input_locally = false
 snap_2d_vertices_to_pixel = true
 size = Vector2i(84, 48)
+render_target_update_mode = 4
 
 [node name="LevelManager" type="Node" parent="SubViewportContainer/Screen"]
 script = ExtResource("2_46bao")
+
+[node name="ScreenTransition" parent="SubViewportContainer/Screen/LevelManager" instance=ExtResource("3_j6cxs")]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true

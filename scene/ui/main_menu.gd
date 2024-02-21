@@ -14,10 +14,7 @@ func _on_start():
 	print("Start pressed")
 	get_parent().switch_scene("res://scene/mini_games/crazy_cars/crazy_car.tscn")
 
+
 func _on_exit():
 	print("Exit pressed")
 	get_tree().quit()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_down"):
-		print("down")
