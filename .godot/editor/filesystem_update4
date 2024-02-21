@@ -1,7 +1,9 @@
-res://main.tscn
-res://assets/theme/main-theme.tres
-res://scene/ui/nokia_stratup.tscn
 res://scene/ui/main_menu.tscn
+res://assets/theme/main-theme.tres
+res://main.tscn
+res://scene/ui/transition.tscn
 res://scene/ui/main_menu.gd
-res://scene/ui/nokia_startup.gd
 res://main.gd
+res://scene/manager/LevelManager.gd
+res://Screen.gd
+res://AspectRatioContainer.gd

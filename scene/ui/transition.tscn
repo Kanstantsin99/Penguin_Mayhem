@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d244nt5rlno1u"]
+
+[ext_resource type="Texture2D" uid="uid://dfq2b4roeyoob" path="res://assets/img/ui/heart_progressbar.png" id="1_7604e"]
+
+[node name="Transition" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Node2D"]
+offset_right = 84.0
+offset_bottom = 17.0
+step = 25.0
+value = 100.0
+texture_progress = ExtResource("1_7604e")

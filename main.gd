@@ -27,10 +27,6 @@ const palettes = {
 const LCD_DIMENSIONS = Vector2(30, 22)
 
 
-func _ready() -> void:
-	aspect_ratio_container.focus_mode = Control.FOCUS_NONE
-	
-
 
 func set_orientation(new_screen_orientation: ORIENTATION) -> void:
 	screen_orientation = new_screen_orientation
