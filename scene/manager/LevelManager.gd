@@ -53,6 +53,7 @@ func run_next_game():
 	for game in minigame:
 		if minigame[game].difficulty == difficulty:
 			switch_scene(minigame[game].path)
+			return
 
 
 func _on_result(result):

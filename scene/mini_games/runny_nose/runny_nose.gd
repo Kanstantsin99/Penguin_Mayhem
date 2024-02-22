@@ -45,12 +45,10 @@ func get_direction() -> Vector2:
 
 func _on_hand_entered(_area):
 	is_on_nose = true
-	print("I'm here")
 
 
 func _on_hand_exited(_area):
 	is_on_nose = false
-	print("I'm out of here")
 
 
 func _on_drop_exited(_area):
@@ -58,7 +56,6 @@ func _on_drop_exited(_area):
 	drop_hit_box.free()
 	ice.visible = true
 	nose_is_alive = false
-
 
 
 func _on_scene_ended():
