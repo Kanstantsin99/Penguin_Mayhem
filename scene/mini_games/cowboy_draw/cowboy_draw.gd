@@ -4,6 +4,7 @@ signal result(bool)
 
 @export_range(0,1) var squinting_time: float = 1
 
+var difficulty = 1
 var player_is_alive: bool = true
 var seal_is_alive: bool = true
 var is_squinting: bool = false
@@ -15,13 +16,14 @@ var is_squinting: bool = false
 
 
 func _ready() -> void:
+	squinting_time = squinting_time / difficulty
 	scene_timer.timeout.connect(_on_scene_ended)
 	start_squint()
 
 
 func _process(_delta: float) -> void:
 	progress_bar.value = scene_timer.time_left
-	if !player_is_alive and !seal_is_alive:
+	if !seal_is_alive:
 		return
 	
 	if Input.is_action_just_pressed("ui_accept") and !is_squinting:
@@ -30,7 +32,8 @@ func _process(_delta: float) -> void:
 		player.play("die")
 		player_is_alive = false
 	
-	if Input.is_action_just_pressed("ui_accept") and is_squinting:
+	
+	if Input.is_action_just_pressed("ui_accept") and is_squinting and player_is_alive:
 		player.play("shoot")
 		GlobalAudioPlayer._play("res://assets/audio/shot.wav")
 		seal.play("die")
@@ -47,6 +50,7 @@ func start_squint():
 		seal.play("shoot")
 		GlobalAudioPlayer._play("res://assets/audio/shot.wav")
 		player.play("die")
+		player_is_alive = false
 
 func _on_scene_ended():
 	result.emit(player_is_alive)

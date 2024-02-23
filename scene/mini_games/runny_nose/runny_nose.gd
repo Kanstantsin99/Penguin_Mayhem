@@ -5,6 +5,7 @@ signal result(bool)
 @export var hand_speed = 80
 @export var drop_speed = 5
 
+var difficulty = 1
 var is_on_nose: bool = false
 var nose_is_alive: bool = true
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	drop_hit_box.area_exited.connect(_on_hand_exited)
 	nose_collision.area_exited.connect(_on_drop_exited)
 	scene_timer.timeout.connect(_on_scene_ended)
+	drop_speed = drop_speed * difficulty
 
 
 func _process(delta: float) -> void:

@@ -1,8 +1,4 @@
-res://scene/mini_games/crazy_car/crazy_car.tscn
+res://main.tscn
 res://assets/theme/main-theme.tres
 res://scene/component/screen_transition.gdshader
-res://main.tscn
-res://scene/mini_games/cowboy_draw/cowboy_draw.tscn
-res://scene/mini_games/runny_nose/runny_nose.tscn
 res://scene/manager/LevelManager.gd
-res://scene/mini_games/cowboy_draw/cowboy_draw.gd
