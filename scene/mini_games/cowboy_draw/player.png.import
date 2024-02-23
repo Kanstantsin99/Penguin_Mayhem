@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsqcoqhc0byf"
-path="res://.godot/imported/heart.png-82857866c909a0e6b91b5035ba5f90df.ctex"
+uid="uid://c81e8dly4d4e2"
+path="res://.godot/imported/player.png-5cb8a7a2d375d6cfba11650b2bfb0f22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/ui/heart.png"
-dest_files=["res://.godot/imported/heart.png-82857866c909a0e6b91b5035ba5f90df.ctex"]
+source_file="res://scene/mini_games/cowboy_draw/player.png"
+dest_files=["res://.godot/imported/player.png-5cb8a7a2d375d6cfba11650b2bfb0f22.ctex"]
 
 [params]
 

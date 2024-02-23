@@ -1,0 +1,177 @@
+[gd_scene load_steps=19 format=3 uid="uid://pu1tqkd3hiiq"]
+
+[ext_resource type="Script" path="res://scene/mini_games/cowboy_draw/cowboy_draw.gd" id="1_afowp"]
+[ext_resource type="Texture2D" uid="uid://c81e8dly4d4e2" path="res://scene/mini_games/cowboy_draw/player.png" id="2_85plc"]
+[ext_resource type="Texture2D" uid="uid://di3haykk1js2b" path="res://scene/mini_games/cowboy_draw/landscape.png" id="2_g1a75"]
+[ext_resource type="Texture2D" uid="uid://dkf0qi7vjuh2s" path="res://scene/mini_games/cowboy_draw/seal.png" id="3_xha8q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxjww"]
+atlas = ExtResource("2_85plc")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6wt8"]
+atlas = ExtResource("2_85plc")
+region = Rect2(336, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40kks"]
+atlas = ExtResource("2_85plc")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7u2e"]
+atlas = ExtResource("2_85plc")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhxmy"]
+atlas = ExtResource("2_85plc")
+region = Rect2(168, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqp7r"]
+atlas = ExtResource("2_85plc")
+region = Rect2(252, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymlkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxjww")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6wt8")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40kks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7u2e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhxmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqp7r")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp8ri"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqj5c"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(336, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj51m"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lscn"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(168, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty5t7"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(252, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kfot"]
+atlas = ExtResource("3_xha8q")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2he5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp8ri")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqj5c")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj51m")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lscn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty5t7")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kfot")
+}],
+"loop": false,
+"name": &"squint",
+"speed": 5.0
+}]
+
+[node name="CowboyDraw" type="Node"]
+script = ExtResource("1_afowp")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(42, 24)
+
+[node name="Landscape" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_g1a75")
+
+[node name="Player" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_ymlkl")
+animation = &"shoot"
+autoplay = "idle"
+
+[node name="Seal" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_q2he5")
+animation = &"squint"
+autoplay = "idle"
+
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 5.0
+step = 0.25
+value = 5.0
+show_percentage = false

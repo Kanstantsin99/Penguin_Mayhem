@@ -1,3 +1,4 @@
+AnimatedSprite2D
 MarginContainer
 Label
 CanvasLayer
@@ -5,7 +6,6 @@ TextureRect
 CanvasModulate
 AudioStreamPlayer
 AudioStreamPlayer2D
-AnimatedSprite2D
 Node
 CollisionShape2D
 Area2D

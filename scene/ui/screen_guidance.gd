@@ -9,7 +9,9 @@ func _ready() -> void:
 
 
 func show_guidance(guidance: String):
+	get_tree().paused = true
 	show()
 	label.text = guidance
 	await get_tree().create_timer(duration).timeout
 	hide()
+	get_tree().paused = false
