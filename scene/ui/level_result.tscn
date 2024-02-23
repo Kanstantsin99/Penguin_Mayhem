@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d244nt5rlno1u"]
+
+[ext_resource type="Texture2D" uid="uid://dfq2b4roeyoob" path="res://assets/img/ui/heart_progressbar.png" id="1_7604e"]
+[ext_resource type="Script" path="res://scene/ui/level_result.gd" id="1_kga0e"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cppvk"]
+
+[node name="LevelResult" type="CanvasLayer"]
+script = ExtResource("1_kga0e")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 84.0
+offset_bottom = 48.0
+texture = SubResource("CanvasTexture_cppvk")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Node2D"]
+offset_right = 84.0
+offset_bottom = 17.0
+max_value = 4.0
+value = 4.0
+texture_progress = ExtResource("1_7604e")
+metadata/_edit_use_anchors_ = true

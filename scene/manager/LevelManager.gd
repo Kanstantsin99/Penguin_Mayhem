@@ -1,5 +1,6 @@
 extends Node
 
+var lives = 4
 var current_scene = null
 var minigame = {
 	CrazyCar = {
@@ -13,6 +14,7 @@ var minigame = {
 }
 
 @onready var screen_transition: CanvasLayer = $ScreenTransition
+@onready var level_result: CanvasLayer = $LevelResult
 
 
 func _ready() -> void:
@@ -24,23 +26,23 @@ func switch_scene(res_path):
 	call_deferred("_deferred_switch_scene", res_path)
 
 
+# Empties current_scene and connects result signal
 func _deferred_switch_scene(res_path):
+	if current_scene.has_signal("result"):
+		current_scene.result.disconnect(_on_result)
 	if current_scene:
 		current_scene.free()
 	var s = load(res_path)
 	current_scene = s.instantiate()
 	if current_scene.get_parent():
 		current_scene.get_parent().remove_child(current_scene)
-	screen_transition.transition()
-	await screen_transition.transition_halfway
 	if current_scene.has_signal("result"):
 		current_scene.result.connect(_on_result)
 	add_child(current_scene)
 
 
+# Updates 
 func run_next_game():
-	if current_scene.has_signal("result"):
-		current_scene.result.disconnect(_on_result)
 	var difficulty = minigame[current_scene.name].difficulty
 	minigame[current_scene.name].difficulty += 1
 	
@@ -57,8 +59,14 @@ func run_next_game():
 
 
 func _on_result(result):
-	if result:
-		print("You win")
-	else:
-		print("You loose")
+	screen_transition.transition_in()
+	if !result:
+		lives -= 1
+		if lives == 0:
+			get_tree().quit()
+	
+	await screen_transition.transition_halfway
+	level_result.show_result(lives)
+	await level_result.showed
+	screen_transition.transition_out()
 	run_next_game()
