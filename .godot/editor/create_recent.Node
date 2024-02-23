@@ -1,5 +1,5 @@
-Label
 MarginContainer
+Label
 CanvasLayer
 TextureRect
 CanvasModulate
@@ -12,4 +12,3 @@ Area2D
 ProgressBar
 CharacterBody2D
 CenterContainer
-Button

@@ -69,9 +69,13 @@ func run_next_game():
 # removes child from a LevelManager
 func _on_result(result):
 	screen_transition.transition_in()
+	if result:
+		GlobalAudioPlayer._play("res://assets/audio/jingle1.wav")
 	if !result:
+		GlobalAudioPlayer._play("res://assets/audio/negative1.wav")
 		lives -= 1
 		if lives == 0:
+			# NOTE: Here transition to end screen is needed
 			get_tree().quit()
 	
 	if current_scene.get_parent():

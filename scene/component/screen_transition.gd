@@ -7,25 +7,25 @@ signal transition_halfway;
 
 
 func transition():
-	color_rect.visible = true
+	show()
 	animation_player.play("default")
 	await animation_player.animation_finished
 	transition_halfway.emit()
 	animation_player.play_backwards("default")
 	await animation_player.animation_finished
-	color_rect.visible = false
+	hide()
 
 func transition_in():
-	color_rect.visible = true
+	show()
 	animation_player.play("default")
 	await animation_player.animation_finished
 	transition_halfway.emit()
-	color_rect.visible = false
+	hide()
 
 
 func transition_out():
-	color_rect.visible = true
+	show()
 	animation_player.play_backwards("default")
 	await animation_player.animation_finished
-	color_rect.visible = false
 	transition_halfway.emit()
+	hide()
