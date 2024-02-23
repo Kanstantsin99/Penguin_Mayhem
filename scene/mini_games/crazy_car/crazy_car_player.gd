@@ -22,9 +22,10 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() or Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		animated_sprite_2d.play("jump")
-		GlobalAudioPlayer._play("res://scene/mini_games/crazy_car/jump.wav")
+		if is_alive:
+			velocity.y = JUMP_VELOCITY
+			animated_sprite_2d.play("jump")
+			GlobalAudioPlayer._play("res://scene/mini_games/crazy_car/jump.wav")
 	
 	move_and_slide()
 

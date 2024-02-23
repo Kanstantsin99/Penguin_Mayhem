@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bntx0mph1moph"]
+
+[ext_resource type="Script" path="res://scene/ui/screen_guidance.gd" id="1_wf18n"]
+
+[node name="ScreenGuidance" type="CanvasLayer"]
+script = ExtResource("1_wf18n")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D"]
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="Label" type="Label" parent="Node2D/MarginContainer"]
+layout_mode = 2
+horizontal_alignment = 1

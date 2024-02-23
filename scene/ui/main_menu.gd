@@ -11,10 +11,8 @@ func _ready() -> void:
 
 
 func _on_start():
-	print("Start pressed")
-	get_parent().switch_scene("res://scene/mini_games/crazy_car/crazy_car.tscn")
+	get_parent()._on_result(true)
 
 
 func _on_exit():
-	print("Exit pressed")
 	get_tree().quit()

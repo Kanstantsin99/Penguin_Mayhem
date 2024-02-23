@@ -1,9 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d244nt5rlno1u"]
+[gd_scene load_steps=6 format=3 uid="uid://d244nt5rlno1u"]
 
-[ext_resource type="Texture2D" uid="uid://dfq2b4roeyoob" path="res://assets/img/ui/heart_progressbar.png" id="1_7604e"]
 [ext_resource type="Script" path="res://scene/ui/level_result.gd" id="1_kga0e"]
+[ext_resource type="Texture2D" uid="uid://ca0hx3cwybuas" path="res://assets/img/ui/eggs_progressbar.png" id="2_xhxnk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cppvk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdxl0"]
+atlas = ExtResource("2_xhxnk")
+region = Rect2(0, 16, 84, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laer7"]
+atlas = ExtResource("2_xhxnk")
+region = Rect2(0, 0, 84, 16)
 
 [node name="LevelResult" type="CanvasLayer"]
 script = ExtResource("1_kga0e")
@@ -21,5 +29,6 @@ offset_right = 84.0
 offset_bottom = 17.0
 max_value = 4.0
 value = 4.0
-texture_progress = ExtResource("1_7604e")
+texture_under = SubResource("AtlasTexture_wdxl0")
+texture_progress = SubResource("AtlasTexture_laer7")
 metadata/_edit_use_anchors_ = true

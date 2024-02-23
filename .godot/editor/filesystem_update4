@@ -14,3 +14,10 @@ res://scene/autoload/GlobalAudioPlayer.gd
 res://scene/ui/level_result.gd
 res://scene/component/screen_transition.tscn
 res://scene/component/screen_transition.gd
+res://main.gd
+res://scene/ui/main_menu.gd
+res://scene/ui/screen_guidance.tscn
+res://scene/ui/screen_guidance.gd
+res://scene/ui/name_selection.gd
+res://scene/mini_games/crazy_car/crazy_car_car.gd
+res://scene/mini_games/crazy_car/crazy_car.gd

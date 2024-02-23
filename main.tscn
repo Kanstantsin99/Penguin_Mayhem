@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://pstqes7jcym2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nrtmp"]
-[ext_resource type="Script" path="res://scene/manager/ScoreManager.gd" id="2_7kwg6"]
 [ext_resource type="Script" path="res://scene/manager/LevelManager.gd" id="2_46bao"]
 [ext_resource type="Shader" path="res://assets/shaders/nokia-3310.gdshader" id="3_dhqyx"]
 [ext_resource type="PackedScene" uid="uid://bsbe7rei2vqty" path="res://scene/component/screen_transition.tscn" id="3_j6cxs"]
 [ext_resource type="PackedScene" uid="uid://d244nt5rlno1u" path="res://scene/ui/level_result.tscn" id="5_0oj1x"]
+[ext_resource type="PackedScene" uid="uid://bntx0mph1moph" path="res://scene/ui/screen_guidance.tscn" id="5_gdh7e"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l502v"]
 viewport_path = NodePath("SubViewportContainer/Screen")
@@ -24,9 +24,6 @@ shader_parameter/screen = SubResource("ViewportTexture_l502v")
 script = ExtResource("1_nrtmp")
 metadata/_edit_horizontal_guides_ = [48.0]
 metadata/_edit_vertical_guides_ = [84.0]
-
-[node name="ScoreManager" type="Node" parent="."]
-script = ExtResource("2_7kwg6")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 offset_right = 40.0
@@ -50,6 +47,8 @@ script = ExtResource("2_46bao")
 
 [node name="LevelResult" parent="SubViewportContainer/Screen/LevelManager" instance=ExtResource("5_0oj1x")]
 visible = false
+
+[node name="ScreenGuidance" parent="SubViewportContainer/Screen/LevelManager" instance=ExtResource("5_gdh7e")]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true

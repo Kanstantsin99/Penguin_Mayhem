@@ -12,11 +12,7 @@ const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 func _ready() -> void:
 	start_button.grab_focus()
 	button.pressed.connect(_on_button_pressed)
-	
-	
-	
-func _process(delta: float) -> void:
-	pass
+
 
 func _on_button_pressed():
 	button.focus_mode = Control.FOCUS_NONE
