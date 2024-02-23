@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=15
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalAudioPlayer="*res://scene/autoload/GlobalAudioPlayer.tscn"
+
 [display]
 
 window/size/viewport_width=84

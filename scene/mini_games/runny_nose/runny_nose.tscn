@@ -62,8 +62,6 @@ collision_mask = 0
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_33lnr")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="SceneTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true

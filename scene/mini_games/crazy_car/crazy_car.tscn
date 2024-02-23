@@ -7,6 +7,47 @@
 [ext_resource type="Texture2D" uid="uid://n7touhjiy7j6" path="res://scene/mini_games/crazy_car/seal_sliding.png" id="5_pxifq"]
 [ext_resource type="Texture2D" uid="uid://cy7db65jhprnh" path="res://scene/mini_games/crazy_car/floor.png" id="6_mhqyy"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_chusv"]
+atlas = ExtResource("5_pxifq")
+region = Rect2(0, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtqro"]
+atlas = ExtResource("5_pxifq")
+region = Rect2(42, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcu7f"]
+atlas = ExtResource("5_pxifq")
+region = Rect2(84, 0, 42, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ysen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chusv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chusv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtqro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcu7f")
+}],
+"loop": false,
+"name": &"slide",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10unx"]
+radius = 4.0
+height = 16.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx6dl"]
 atlas = ExtResource("3_uyuvn")
 region = Rect2(0, 0, 28, 48)
@@ -67,47 +108,6 @@ height = 14.0
 radius = 2.1
 height = 10.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_chusv"]
-atlas = ExtResource("5_pxifq")
-region = Rect2(0, 0, 42, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtqro"]
-atlas = ExtResource("5_pxifq")
-region = Rect2(42, 0, 42, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcu7f"]
-atlas = ExtResource("5_pxifq")
-region = Rect2(84, 0, 42, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ysen"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chusv")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chusv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qtqro")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fcu7f")
-}],
-"loop": false,
-"name": &"slide",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10unx"]
-radius = 4.0
-height = 16.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kweps"]
 size = Vector2(166, 6)
 
@@ -116,6 +116,22 @@ script = ExtResource("1_tuyu0")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, -1)
+
+[node name="Seal" type="CharacterBody2D" parent="Node2D"]
+position = Vector2(69, 37)
+collision_layer = 4
+script = ExtResource("4_wcer1")
+speed = 30.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Seal"]
+position = Vector2(-1, -13)
+sprite_frames = SubResource("SpriteFrames_8ysen")
+animation = &"slide"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Seal"]
+position = Vector2(-6, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_10unx")
 
 [node name="Player" type="CharacterBody2D" parent="Node2D"]
 position = Vector2(11, 29)
@@ -137,22 +153,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player/HitBox"]
 shape = SubResource("CapsuleShape2D_cxruw")
 
-[node name="Seal" type="CharacterBody2D" parent="Node2D"]
-position = Vector2(69, 37)
-collision_layer = 4
-script = ExtResource("4_wcer1")
-speed = 30.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Seal"]
-position = Vector2(-1, -13)
-sprite_frames = SubResource("SpriteFrames_8ysen")
-animation = &"slide"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Seal"]
-position = Vector2(-6, 1)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_10unx")
-
 [node name="Floor" type="StaticBody2D" parent="Node2D"]
 position = Vector2(42, 24)
 disable_mode = 1
@@ -163,8 +163,6 @@ shape = SubResource("RectangleShape2D_kweps")
 
 [node name="FloorSprite" type="Sprite2D" parent="Node2D/Floor"]
 texture = ExtResource("6_mhqyy")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="SceneTimer" type="Timer" parent="."]
 wait_time = 5.0

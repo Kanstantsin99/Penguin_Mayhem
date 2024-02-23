@@ -2,3 +2,4 @@
 
 [resource]
 bus/0/solo = true
+bus/0/volume_db = -0.0327297

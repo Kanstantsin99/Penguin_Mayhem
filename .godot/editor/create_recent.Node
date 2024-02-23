@@ -1,3 +1,8 @@
+TextureRect
+CanvasModulate
+CanvasLayer
+AudioStreamPlayer
+AudioStreamPlayer2D
 AnimatedSprite2D
 Node
 CollisionShape2D
@@ -8,7 +13,3 @@ CharacterBody2D
 CenterContainer
 Button
 Label
-PanelContainer
-HBoxContainer
-VBoxContainer
-LineEdit
