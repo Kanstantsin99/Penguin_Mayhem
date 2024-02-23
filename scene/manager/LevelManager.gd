@@ -5,16 +5,19 @@ var current_scene = null
 var minigame = {
 	CrazyCar = {
 		path = "res://scene/mini_games/crazy_car/crazy_car.tscn",
-		difficulty = 0
+		difficulty = 0,
+		guidance = "Jump"
 	},
 	RunnyNose = {
 		path = "res://scene/mini_games/runny_nose/runny_nose.tscn",
-		difficulty = 0
+		difficulty = 0,
+		guidance = "Rub"
 	}
 }
 
 @onready var screen_transition: CanvasLayer = $ScreenTransition
 @onready var level_result: CanvasLayer = $LevelResult
+@onready var screen_guidance: CanvasLayer = $ScreenGuidance
 
 
 func _ready() -> void:
@@ -34,36 +37,45 @@ func _deferred_switch_scene(res_path):
 		current_scene.free()
 	var s = load(res_path)
 	current_scene = s.instantiate()
-	if current_scene.get_parent():
-		current_scene.get_parent().remove_child(current_scene)
 	if current_scene.has_signal("result"):
 		current_scene.result.connect(_on_result)
+	
 	add_child(current_scene)
 
 
-# Updates 
+# Select game from minigame and updates its difficulty in dict
 func run_next_game():
-	var difficulty = minigame[current_scene.name].difficulty
-	minigame[current_scene.name].difficulty += 1
+	var difficulty = 0
+	if !current_scene.name == "MainMenu":
+		difficulty = minigame[current_scene.name].difficulty
+		minigame[current_scene.name].difficulty += 1
 	
 	for game in minigame:
 		if minigame[game].difficulty == difficulty:
 			switch_scene(minigame[game].path)
+			screen_guidance.show_guidance(minigame[game].guidance)
 			return
 	
 	difficulty += 1
 	for game in minigame:
 		if minigame[game].difficulty == difficulty:
 			switch_scene(minigame[game].path)
+			screen_guidance.show_guidance(minigame[game].guidance)
 			return
 
 
+# Shows LevelResult with transitions
+# checks if lives > 0
+# removes child from a LevelManager
 func _on_result(result):
 	screen_transition.transition_in()
 	if !result:
 		lives -= 1
 		if lives == 0:
 			get_tree().quit()
+	
+	if current_scene.get_parent():
+		current_scene.get_parent().remove_child(current_scene)
 	
 	await screen_transition.transition_halfway
 	level_result.show_result(lives)

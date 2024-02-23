@@ -1,6 +1,8 @@
+Label
+MarginContainer
+CanvasLayer
 TextureRect
 CanvasModulate
-CanvasLayer
 AudioStreamPlayer
 AudioStreamPlayer2D
 AnimatedSprite2D
@@ -8,8 +10,6 @@ Node
 CollisionShape2D
 Area2D
 ProgressBar
-MarginContainer
 CharacterBody2D
 CenterContainer
 Button
-Label

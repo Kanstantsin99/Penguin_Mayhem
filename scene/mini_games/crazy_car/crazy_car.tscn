@@ -121,7 +121,6 @@ position = Vector2(0, -1)
 position = Vector2(69, 37)
 collision_layer = 4
 script = ExtResource("4_wcer1")
-speed = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Seal"]
 position = Vector2(-1, -13)

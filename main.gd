@@ -27,7 +27,6 @@ const palettes = {
 const LCD_DIMENSIONS = Vector2(30, 22)
 
 
-
 func set_orientation(new_screen_orientation: ORIENTATION) -> void:
 	screen_orientation = new_screen_orientation
 	var resolution = Vector2(84, 48)
@@ -40,6 +39,7 @@ func set_orientation(new_screen_orientation: ORIENTATION) -> void:
 		screen.size = resolution
 	if aspect_ratio_container:
 		aspect_ratio_container.ratio = ratio
+
 
 func set_palette(new_palette: PALETTE) -> void:
 	palette = new_palette
