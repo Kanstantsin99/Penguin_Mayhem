@@ -12,13 +12,13 @@ var objectarray = []
 func _ready():
 	#objectarray = null
 	amount = 0
-	max = main.difficulty + 2
-	timer()
+	max = main.difficulty + 1
+	spawn()
 
 func timer():
 	var timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 1 / main.difficulty
+	timer.wait_time = 0.75 #/ main.difficulty
 	timer.one_shot = true
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)

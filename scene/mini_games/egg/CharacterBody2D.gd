@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50
+const SPEED = 85
 
 @onready var penguin = $Penguin
 @onready var area_2d = $Area2D
