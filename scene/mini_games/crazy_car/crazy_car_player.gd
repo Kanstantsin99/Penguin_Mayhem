@@ -32,4 +32,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_hit(_body):
 	is_alive = false
+	GlobalAudioPlayer._play("res://assets/audio/hit2.wav")
 	animated_sprite_2d.play("death")

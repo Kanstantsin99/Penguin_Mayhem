@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cks1q0aqmu8lk"]
+
+[ext_resource type="Script" path="res://scene/ui/intro_banner.gd" id="1_8vjm6"]
+[ext_resource type="FontFile" uid="uid://xtae7u215dl2" path="res://assets/fonts/tiny_@matthewwelch/tiny.ttf" id="2_kd6d1"]
+
+[sub_resource type="Animation" id="Animation_36aqs"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 36), Vector2(4, 30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w8ex"]
+_data = {
+"idle": SubResource("Animation_36aqs")
+}
+
+[node name="IntroBanner" type="Node"]
+script = ExtResource("1_8vjm6")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 48.0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_kd6d1")
+theme_override_font_sizes/font_size = 6
+text = "Press Start
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D"]
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="Label" type="Label" parent="Node2D/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 11
+text = "Penguin
+Mayhem"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Node2D")
+libraries = {
+"": SubResource("AnimationLibrary_4w8ex")
+}
+autoplay = "idle"

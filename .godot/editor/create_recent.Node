@@ -1,6 +1,9 @@
-AnimatedSprite2D
 MarginContainer
 Label
+AnimationPlayer
+VideoStreamPlayer
+AnimatedSprite2D
+Node2D
 CanvasLayer
 TextureRect
 CanvasModulate
@@ -9,6 +12,3 @@ AudioStreamPlayer2D
 Node
 CollisionShape2D
 Area2D
-ProgressBar
-CharacterBody2D
-CenterContainer

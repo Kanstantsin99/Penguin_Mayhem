@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2d75vqruuyb5"]
+[gd_scene load_steps=3 format=3 uid="uid://2d75vqruuyb5"]
 
 [ext_resource type="Script" path="res://scene/ui/main_menu.gd" id="1_mfveh"]
+[ext_resource type="FontFile" uid="uid://cfoav24nweskk" path="res://assets/fonts/ark_@somepx/Ark.ttf" id="2_ny1dn"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_mfveh")
@@ -27,11 +28,16 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../ExitButton")
 mouse_filter = 2
 theme_type_variation = &"SmallButton"
-text = "Start"
+theme_override_fonts/font = ExtResource("2_ny1dn")
+theme_override_font_sizes/font_size = 8
+text = "Play
+"
 
 [node name="ExitButton" type="Button" parent="Node2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 mouse_filter = 2
 theme_type_variation = &"SmallButton"
+theme_override_fonts/font = ExtResource("2_ny1dn")
+theme_override_font_sizes/font_size = 8
 text = "Exit"

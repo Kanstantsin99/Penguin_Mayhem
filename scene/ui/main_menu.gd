@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func _on_start():
 	get_parent()._on_result(true)
+	GlobalAudioPlayer._play("res://assets/audio/select.wav")
 
 
 func _on_exit():

@@ -13,7 +13,7 @@ var difficulty = 1
 
 func _ready() -> void:
 	scene_timer.timeout.connect(_on_scene_ended)
-	seal.speed = seal.speed * difficulty / 2
+	seal.speed = seal.speed * difficulty / 1.5
 
 
 func _process(_delta: float) -> void:
