@@ -151,7 +151,7 @@ texture = ExtResource("2_g1a75")
 
 [node name="Player" type="AnimatedSprite2D" parent="Node2D"]
 sprite_frames = SubResource("SpriteFrames_ymlkl")
-animation = &"shoot"
+animation = &"die"
 autoplay = "idle"
 
 [node name="Seal" type="AnimatedSprite2D" parent="Node2D"]

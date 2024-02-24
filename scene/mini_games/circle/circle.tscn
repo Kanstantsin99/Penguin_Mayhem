@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5mkbg5wyvh3h"]
+
+[ext_resource type="Script" path="res://scene/mini_games/circle/circle.gd" id="1_stwnp"]
+[ext_resource type="Texture2D" uid="uid://cgffbxfr3mi73" path="res://scene/mini_games/circle/back.png" id="2_0jf2l"]
+[ext_resource type="Texture2D" uid="uid://2ofv5a0sx61u" path="res://scene/mini_games/circle/circle.png" id="3_0akit"]
+[ext_resource type="Texture2D" uid="uid://gpqwcc4qqoa4" path="res://scene/mini_games/circle/player.png" id="4_cmfr2"]
+[ext_resource type="Texture2D" uid="uid://dvsdvwynhydrw" path="res://scene/mini_games/circle/aaa.png" id="5_2k0gc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdjnl"]
+atlas = ExtResource("4_cmfr2")
+region = Rect2(168, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftn8f"]
+atlas = ExtResource("4_cmfr2")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xl4s"]
+atlas = ExtResource("4_cmfr2")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycg8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdjnl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftn8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xl4s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gd4c"]
+atlas = ExtResource("5_2k0gc")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi32i"]
+atlas = ExtResource("5_2k0gc")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sk7ht"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gd4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi32i")
+}],
+"loop": true,
+"name": &"aaa",
+"speed": 5.0
+}]
+
+[node name="Circle" type="Node"]
+script = ExtResource("1_stwnp")
+
+[node name="Back" type="Sprite2D" parent="."]
+texture = ExtResource("2_0jf2l")
+centered = false
+
+[node name="Circle" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+texture = ExtResource("3_0akit")
+
+[node name="Area2D" type="Area2D" parent="Circle"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Circle/Area2D"]
+position = Vector2(-24, -24)
+polygon = PackedVector2Array(37, 37, 41, 33, 43, 24, 41, 15, 37, 11, 24, 24)
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ycg8s")
+animation = &"idle"
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Area2D"]
+polygon = PackedVector2Array(38, 16, 38, 20, 40, 24, 45, 29, 51, 33, 54, 27)
+
+[node name="Aaa" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_sk7ht")
+animation = &"aaa"
+centered = false
+
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 5.0
+step = 0.25
+value = 5.0
+show_percentage = false
+
+[node name="Node2D" type="Node2D" parent="."]
