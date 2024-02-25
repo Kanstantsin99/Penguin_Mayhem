@@ -3,6 +3,11 @@ extends Node
 var lives = 4
 var current_scene = null
 var minigame = {
+	PenguinOfSnowshima = {
+		path = "res://scene/mini_games/penguin_of_snowshima/penguin_of_snowshima.tscn",
+		difficulty = 1,
+		guidance = "Press"
+	},
 	CowboyDraw = {
 		path = "res://scene/mini_games/cowboy_draw/cowboy_draw.tscn",
 		difficulty = 1,

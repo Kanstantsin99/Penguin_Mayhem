@@ -1,6 +1,156 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdjbtei4c0lxu"]
+[gd_scene load_steps=22 format=3 uid="uid://cdjbtei4c0lxu"]
 
 [ext_resource type="Script" path="res://scene/mini_games/penguin_of_snowshima/penguin_of_snowshima.gd" id="1_b5cyl"]
+[ext_resource type="Texture2D" uid="uid://wld73x62k0uf" path="res://scene/mini_games/penguin_of_snowshima/penguin_of_snowshima.png" id="2_m08vf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lr6"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbgx7"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycmmt"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(168, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7654t"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(252, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_020jj"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(336, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jwnb"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(420, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkss"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(504, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vd0a"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(588, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycxnx"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aced2"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(168, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f63po"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(252, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8gp1"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(336, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dtuv"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(672, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsy1f"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(756, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stu5j"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(840, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vieem"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(924, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6muxv"]
+atlas = ExtResource("2_m08vf")
+region = Rect2(1008, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56spq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lr6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbgx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycmmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7654t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_020jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jwnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vd0a")
+}],
+"loop": false,
+"name": &"failed",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycxnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aced2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f63po")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8gp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dtuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsy1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stu5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vieem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6muxv")
+}],
+"loop": false,
+"name": &"sliced",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hoa1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 
 [node name="PenguinOfSnowshima" type="Node"]
 script = ExtResource("1_b5cyl")
@@ -8,45 +158,68 @@ script = ExtResource("1_b5cyl")
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(42, 24)
 
-[node name="Label1" type="Label" parent="Node2D"]
-custom_minimum_size = Vector2(10, 0)
-offset_left = -26.0
-offset_top = 4.0
-offset_right = -16.0
-offset_bottom = 21.0
+[node name="Penguin" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_56spq")
+
+[node name="Panel1" type="Panel" parent="Node2D"]
+offset_left = -35.0
+offset_right = -18.0
+offset_bottom = 17.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
+
+[node name="Label1" type="Label" parent="Node2D/Panel1"]
+custom_minimum_size = Vector2(15, 15)
+offset_left = 1.0
+offset_right = 16.0
+offset_bottom = 17.0
 theme_override_font_sizes/font_size = 13
 text = "↓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Node2D"]
+[node name="Panel2" type="Panel" parent="Node2D"]
+offset_left = -17.0
+offset_bottom = 17.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
+
+[node name="Label2" type="Label" parent="Node2D/Panel2"]
 custom_minimum_size = Vector2(10, 0)
-offset_left = -13.0
-offset_top = 4.0
-offset_right = -3.0
-offset_bottom = 21.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 18.0
 theme_override_font_sizes/font_size = 13
 text = "↑"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Node2D"]
-custom_minimum_size = Vector2(10, 0)
+[node name="Panel3" type="Panel" parent="Node2D"]
 offset_left = 1.0
-offset_top = 4.0
-offset_right = 14.0
-offset_bottom = 21.0
+offset_right = 18.0
+offset_bottom = 17.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
+
+[node name="Label3" type="Label" parent="Node2D/Panel3"]
+custom_minimum_size = Vector2(10, 0)
+offset_left = 2.0
+offset_right = 15.0
+offset_bottom = 17.0
 theme_override_font_sizes/font_size = 13
 text = "←"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="Node2D"]
+[node name="Panel4" type="Panel" parent="Node2D"]
+offset_left = 19.0
+offset_right = 36.0
+offset_bottom = 17.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
+
+[node name="Label4" type="Label" parent="Node2D/Panel4"]
 custom_minimum_size = Vector2(10, 0)
-offset_left = 16.0
-offset_top = 4.0
-offset_right = 29.0
-offset_bottom = 21.0
+offset_left = 2.0
+offset_right = 15.0
+offset_bottom = 17.0
 theme_override_font_sizes/font_size = 13
 text = "→"
 horizontal_alignment = 1

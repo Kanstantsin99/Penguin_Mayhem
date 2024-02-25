@@ -2,7 +2,7 @@ extends Node
 
 signal result(bool)
 
-@export var window_to_slice = 3
+@export var window_to_slice: float = 3
 
 var difficulty: int = 1
 var arrows: Array = ["↑", "↓", "←", "→"]
@@ -13,10 +13,11 @@ var is_first_time: bool = true
 
 @onready var scene_timer: Timer = $SceneTimer
 @onready var progress_bar: ProgressBar = $MarginContainer/ProgressBar
-@onready var label_1: Label = $Node2D/Label1
-@onready var label_2: Label = $Node2D/Label2
-@onready var label_3: Label = $Node2D/Label3
-@onready var label_4: Label = $Node2D/Label4
+@onready var label_1: Label = $Node2D/Panel1/Label1
+@onready var label_2: Label = $Node2D/Panel2/Label2
+@onready var label_3: Label = $Node2D/Panel3/Label3
+@onready var label_4: Label = $Node2D/Panel4/Label4
+@onready var penguin: AnimatedSprite2D = $Node2D/Penguin
 
 
 func _ready() -> void:
@@ -26,25 +27,29 @@ func _ready() -> void:
 	label_2.text = arrows[1]
 	label_3.text = arrows[2]
 	label_4.text = arrows[3]
+	penguin.play("default")
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	progress_bar.value = scene_timer.time_left
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
 		players_input.append("↑")
+		timer_start()
 	elif event.is_action_pressed("ui_down"):
 		players_input.append("↓")
+		timer_start()
 	elif event.is_action_pressed("ui_left"):
 		players_input.append("←")
+		timer_start()
 	elif event.is_action_pressed("ui_right"):
 		players_input.append("→")
+		timer_start()
 	
 	if event is InputEventKey and is_correct and !is_sliced:
 		input_check()
-		timer_start()
 
 
 func input_check():
@@ -59,18 +64,27 @@ func input_check():
 
 func timer_start():
 	if is_first_time:
-		get_tree().create_timer(window_to_slice * 1/difficulty).timeout.connect(_on_time_out)
+		get_tree().create_timer(window_to_slice * difficulty * 1/2).timeout.connect(_on_time_out)
 		is_first_time = false
 
 
 func slice():
 	is_sliced = true
-	print("Sliced")
+	hide_labels()
+	penguin.play("sliced")
 
 
 func fail():
 	is_correct = false
-	print("Failed")
+	hide_labels()
+	penguin.play("failed")
+
+
+func hide_labels():
+	$Node2D/Panel1.hide()
+	$Node2D/Panel2.hide()
+	$Node2D/Panel3.hide()
+	$Node2D/Panel4.hide()
 
 
 func _on_time_out():
@@ -79,4 +93,6 @@ func _on_time_out():
 
 
 func _on_scene_ended():
+	if penguin.is_playing():
+		await penguin.animation_finished
 	result.emit(is_sliced)
