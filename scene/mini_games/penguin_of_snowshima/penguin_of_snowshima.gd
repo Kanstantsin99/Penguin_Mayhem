@@ -5,7 +5,7 @@ signal result(bool)
 @export var window_to_slice: float = 3
 
 var difficulty: int = 1
-var arrows: Array = ["↑", "↓", "←", "→"]
+var arrows: Array = ["N", "n", "m", "M"]
 var players_input: Array = []
 var is_sliced: bool = false
 var is_correct: bool = true
@@ -22,6 +22,7 @@ var is_first_time: bool = true
 
 func _ready() -> void:
 	scene_timer.timeout.connect(_on_scene_ended)
+	penguin.frame_changed.connect(_on_frame_changed)
 	arrows.shuffle()
 	label_1.text = arrows[0]
 	label_2.text = arrows[1]
@@ -36,16 +37,16 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up"):
-		players_input.append("↑")
+		players_input.append("N")
 		timer_start()
 	elif event.is_action_pressed("ui_down"):
-		players_input.append("↓")
+		players_input.append("n")
 		timer_start()
 	elif event.is_action_pressed("ui_left"):
-		players_input.append("←")
+		players_input.append("m")
 		timer_start()
 	elif event.is_action_pressed("ui_right"):
-		players_input.append("→")
+		players_input.append("M")
 		timer_start()
 	
 	if event is InputEventKey and is_correct and !is_sliced:
@@ -90,6 +91,11 @@ func hide_labels():
 func _on_time_out():
 	if !is_sliced:
 		fail()
+
+
+func _on_frame_changed():
+	if penguin.frame == 3:
+		GlobalAudioPlayer._play("res://assets/audio/hit2.wav")
 
 
 func _on_scene_ended():

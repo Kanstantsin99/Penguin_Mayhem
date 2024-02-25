@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdjbtei4c0lxu"]
+[gd_scene load_steps=23 format=3 uid="uid://cdjbtei4c0lxu"]
 
 [ext_resource type="Script" path="res://scene/mini_games/penguin_of_snowshima/penguin_of_snowshima.gd" id="1_b5cyl"]
 [ext_resource type="Texture2D" uid="uid://wld73x62k0uf" path="res://scene/mini_games/penguin_of_snowshima/penguin_of_snowshima.png" id="2_m08vf"]
+[ext_resource type="FontFile" uid="uid://bnoxljrcj2tb6" path="res://assets/fonts/PixArrows.ttf" id="2_n55s3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23lr6"]
 atlas = ExtResource("2_m08vf")
@@ -169,11 +170,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
 
 [node name="Label1" type="Label" parent="Node2D/Panel1"]
 custom_minimum_size = Vector2(15, 15)
-offset_left = 1.0
-offset_right = 16.0
+layout_mode = 0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 18.0
 offset_bottom = 17.0
-theme_override_font_sizes/font_size = 13
-text = "↓"
+theme_override_fonts/font = ExtResource("2_n55s3")
+theme_override_font_sizes/font_size = 9
+text = "n"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -184,12 +188,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
 
 [node name="Label2" type="Label" parent="Node2D/Panel2"]
 custom_minimum_size = Vector2(10, 0)
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 14.0
-offset_bottom = 18.0
-theme_override_font_sizes/font_size = 13
-text = "↑"
+layout_mode = 0
+offset_left = 5.0
+offset_top = -1.0
+offset_right = 15.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_n55s3")
+theme_override_font_sizes/font_size = 9
+text = "N"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -201,11 +207,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
 
 [node name="Label3" type="Label" parent="Node2D/Panel3"]
 custom_minimum_size = Vector2(10, 0)
-offset_left = 2.0
-offset_right = 15.0
+layout_mode = 0
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 17.0
 offset_bottom = 17.0
-theme_override_font_sizes/font_size = 13
-text = "←"
+theme_override_fonts/font = ExtResource("2_n55s3")
+theme_override_font_sizes/font_size = 9
+text = "m"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -217,11 +226,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2hoa1")
 
 [node name="Label4" type="Label" parent="Node2D/Panel4"]
 custom_minimum_size = Vector2(10, 0)
-offset_left = 2.0
-offset_right = 15.0
+layout_mode = 0
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 17.0
 offset_bottom = 17.0
-theme_override_font_sizes/font_size = 13
-text = "→"
+theme_override_fonts/font = ExtResource("2_n55s3")
+theme_override_font_sizes/font_size = 9
+text = "M"
 horizontal_alignment = 1
 vertical_alignment = 1
 
