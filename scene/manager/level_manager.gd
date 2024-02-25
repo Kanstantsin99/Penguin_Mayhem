@@ -3,6 +3,11 @@ extends Node
 var lives = 4
 var current_scene = null
 var minigame = {
+	EggReborn = {
+		path = "res://scene/mini_games/egg_reborn/egg_reborn.tscn",
+		difficulty = 1,
+		guidance = "Catch"
+	},
 	Egg = {
 		path = "res://scene/mini_games/egg/egg.tscn",
 		difficulty = 1,
