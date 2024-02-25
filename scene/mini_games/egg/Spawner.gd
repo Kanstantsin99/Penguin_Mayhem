@@ -16,12 +16,7 @@ func _ready():
 	spawn()
 
 func timer():
-	var my_timer = Timer.new()
-	add_child(my_timer)
-	my_timer.wait_time = 0.75 #/ main.difficulty
-	my_timer.one_shot = true
-	my_timer.start()
-	my_timer.timeout.connect(_on_timer_timeout)
+	get_tree().create_timer(.75).timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout():
 	if amount < max_val:
@@ -30,6 +25,7 @@ func _on_timer_timeout():
 func spawn():
 	var obj
 	obj = egg.instantiate()
+	obj.gravity_scale = 0.5
 	var x = rng.randf_range(5, 80)
 	obj.position = Vector2(x, 6)
 	add_child(obj)
