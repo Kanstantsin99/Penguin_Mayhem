@@ -133,7 +133,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_10unx")
 
 [node name="Player" type="CharacterBody2D" parent="Node2D"]
-position = Vector2(11, 29)
+position = Vector2(11, 34)
 collision_layer = 2
 script = ExtResource("2_ue0t3")
 
@@ -143,9 +143,11 @@ sprite_frames = SubResource("SpriteFrames_lrknt")
 animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Player"]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_gnrlw")
 
 [node name="HitBox" type="Area2D" parent="Node2D/Player"]
+position = Vector2(0, 1)
 collision_layer = 0
 collision_mask = 4
 
@@ -177,4 +179,5 @@ layout_mode = 2
 size_flags_vertical = 8
 max_value = 5.0
 step = 0.25
+value = 5.0
 show_percentage = false

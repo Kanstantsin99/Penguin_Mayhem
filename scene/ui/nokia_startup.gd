@@ -2,7 +2,9 @@ extends Node
 
 
 func _queue_free():
-	get_parent().switch_scene("res://scene/ui/main_menu.tscn")
+	get_parent().screen_transition.transition()
+	await get_parent().screen_transition.transition_halfway
+	get_parent().switch_scene("res://scene/ui/intro.tscn")
 
 
 func _input(event: InputEvent) -> void:

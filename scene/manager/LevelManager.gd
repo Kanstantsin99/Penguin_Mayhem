@@ -3,14 +3,19 @@ extends Node
 var lives = 4
 var current_scene = null
 var minigame = {
+	CowboyDraw = {
+		path = "res://scene/mini_games/cowboy_draw/cowboy_draw.tscn",
+		difficulty = 1,
+		guidance = "Shoot"
+	},
 	CrazyCar = {
 		path = "res://scene/mini_games/crazy_car/crazy_car.tscn",
-		difficulty = 0,
+		difficulty = 1,
 		guidance = "Jump"
 	},
 	RunnyNose = {
 		path = "res://scene/mini_games/runny_nose/runny_nose.tscn",
-		difficulty = 0,
+		difficulty = 1,
 		guidance = "Rub"
 	}
 }
@@ -37,6 +42,8 @@ func _deferred_switch_scene(res_path):
 		current_scene.free()
 	var s = load(res_path)
 	current_scene = s.instantiate()
+	if "difficulty" in current_scene:
+		current_scene.difficulty = minigame[current_scene.name].difficulty
 	if current_scene.has_signal("result"):
 		current_scene.result.connect(_on_result)
 	
@@ -69,9 +76,16 @@ func run_next_game():
 # removes child from a LevelManager
 func _on_result(result):
 	screen_transition.transition_in()
+	if result:
+		GlobalAudioPlayer._play("res://assets/audio/jingle1.wav")
 	if !result:
+		GlobalAudioPlayer._play("res://assets/audio/negative1.wav")
 		lives -= 1
 		if lives == 0:
+			# NOTE: Here transition to end screen is needed
+			await screen_transition.transition_halfway
+			level_result.show_result(lives)
+			await level_result.showed
 			get_tree().quit()
 	
 	if current_scene.get_parent():
