@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func on_animation_finished():
+	is_pressed = true
 	animated_sprite_2d.hide()
 	animation_player.play("congrats")
 

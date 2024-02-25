@@ -22,13 +22,13 @@ func _ready():
 	egg_rigid_body_2d.gravity_scale = (0.05 * difficulty)
 	pass 
 
-func _body_entered(node):
+func _body_entered(_node):
 	can = true
 
-func _body_exited(node):
+func _body_exited(_node):
 	can = false
 
-func _process(delta):
+func _process(_delta):
 	progress_bar.value = scene_timer.time_left
 	if !click:
 		if Input.is_action_just_pressed("ui_accept"):
