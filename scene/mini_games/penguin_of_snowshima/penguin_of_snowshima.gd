@@ -89,7 +89,7 @@ func hide_labels():
 
 
 func _on_time_out():
-	if !is_sliced:
+	if !is_sliced and is_correct:
 		fail()
 
 
