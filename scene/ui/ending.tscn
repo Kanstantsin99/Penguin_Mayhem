@@ -1,0 +1,259 @@
+[gd_scene load_steps=33 format=3 uid="uid://bsc8ogij1igj5"]
+
+[ext_resource type="Script" path="res://scene/ui/ending.gd" id="1_iuda5"]
+[ext_resource type="Texture2D" uid="uid://duiwxwugcn5jl" path="res://assets/img/video/ending/1.png" id="2_8xvbv"]
+[ext_resource type="Texture2D" uid="uid://ct8c72lbxpay" path="res://assets/img/video/ending/2.png" id="3_snwc3"]
+[ext_resource type="Texture2D" uid="uid://pmre2squrgev" path="res://assets/img/video/ending/3.png" id="4_3ingd"]
+[ext_resource type="Texture2D" uid="uid://bmwh1wdiscdgt" path="res://assets/img/video/ending/4.png" id="5_pk8um"]
+[ext_resource type="Texture2D" uid="uid://dlkn73erwnv67" path="res://assets/img/video/ending/5.png" id="6_gsvl0"]
+[ext_resource type="Texture2D" uid="uid://duvcnkbpt6xh8" path="res://assets/img/video/ending/6.png" id="7_copw2"]
+[ext_resource type="Texture2D" uid="uid://cni1431awpqoo" path="res://assets/img/video/ending/7.png" id="8_5nmb5"]
+[ext_resource type="Texture2D" uid="uid://da6m8k8jqdr6c" path="res://assets/img/video/ending/8.png" id="9_baynh"]
+[ext_resource type="Texture2D" uid="uid://np0tj8dwmed6" path="res://assets/img/video/ending/9.png" id="10_novfo"]
+[ext_resource type="Texture2D" uid="uid://dg8al3igc0udr" path="res://assets/img/video/ending/10.png" id="11_bgt1r"]
+[ext_resource type="Texture2D" uid="uid://dbte82m4vodcj" path="res://assets/img/video/ending/11.png" id="12_741gq"]
+[ext_resource type="Texture2D" uid="uid://dqtra0a6bixkt" path="res://assets/img/video/ending/12.png" id="13_hbg3r"]
+[ext_resource type="Texture2D" uid="uid://cnvrs1trru3at" path="res://assets/img/video/ending/13.png" id="14_vi7le"]
+[ext_resource type="Texture2D" uid="uid://dk48qla4wfnmc" path="res://assets/img/video/ending/14.png" id="15_cdbhb"]
+[ext_resource type="Texture2D" uid="uid://drpj1u1fhf6bf" path="res://assets/img/video/ending/15.png" id="16_j4m3q"]
+[ext_resource type="Texture2D" uid="uid://cocolh5uvkbhr" path="res://assets/img/video/ending/16.png" id="17_mwu8t"]
+[ext_resource type="Texture2D" uid="uid://cnssnsmsoui1q" path="res://assets/img/video/ending/17.png" id="18_38dn3"]
+[ext_resource type="Texture2D" uid="uid://d4jlivc5oc7g7" path="res://assets/img/video/ending/18.png" id="19_evh3p"]
+[ext_resource type="Texture2D" uid="uid://dljak0acyyj3j" path="res://assets/img/video/ending/19.png" id="20_0pkow"]
+[ext_resource type="Texture2D" uid="uid://b255ec8qneq5u" path="res://assets/img/video/ending/20.png" id="21_40evp"]
+[ext_resource type="Texture2D" uid="uid://k1eei5m6mjle" path="res://assets/img/video/ending/21.png" id="22_vkns4"]
+[ext_resource type="Texture2D" uid="uid://c3m5adpn3x2f7" path="res://assets/img/video/ending/22.png" id="23_j3lii"]
+[ext_resource type="Texture2D" uid="uid://54s30ak14w5c" path="res://assets/img/video/ending/23.png" id="24_7xdoe"]
+[ext_resource type="Texture2D" uid="uid://dcdjycxylpjxn" path="res://assets/img/video/ending/24.png" id="25_hacyf"]
+[ext_resource type="Texture2D" uid="uid://wb121hib242p" path="res://assets/img/video/ending/25.png" id="26_vn51a"]
+[ext_resource type="Texture2D" uid="uid://oqcj0l7fjywf" path="res://assets/img/video/ending/26.png" id="27_oomyv"]
+[ext_resource type="Texture2D" uid="uid://cyei1yvyp176g" path="res://assets/img/video/ending/27.png" id="28_7orjl"]
+[ext_resource type="FontFile" uid="uid://cfoav24nweskk" path="res://assets/fonts/ark_@somepx/Ark.ttf" id="29_32vby"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7888"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8xvbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_snwc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3ingd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pk8um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gsvl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_copw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5nmb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_baynh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_novfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bgt1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_741gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hbg3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vi7le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cdbhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_j4m3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mwu8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_38dn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_evh3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0pkow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_40evp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vkns4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_j3lii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7xdoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_hacyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_vn51a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oomyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_7orjl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_jla88"]
+resource_name = "congrats"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Label3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/VBoxContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/VBoxContainer/StartButton")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"grab_focus"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcumg"]
+_data = {
+"congrats": SubResource("Animation_jla88")
+}
+
+[node name="Ending" type="Node"]
+script = ExtResource("1_iuda5")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_h7888")
+centered = false
+
+[node name="Label" type="Label" parent="Node2D"]
+visible = false
+offset_left = 1.0
+offset_top = 19.0
+offset_right = 83.0
+offset_bottom = 29.0
+text = "Congratulation!!!"
+
+[node name="Label2" type="Label" parent="Node2D"]
+visible = false
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 101.0
+offset_bottom = 29.0
+text = "You win!!!"
+
+[node name="Label3" type="Label" parent="Node2D"]
+visible = false
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 83.0
+offset_bottom = 21.0
+text = "Do you want to
+continue?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node2D"]
+visible = false
+offset_top = 23.0
+offset_right = 84.0
+offset_bottom = 42.0
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+
+[node name="StartButton" type="Button" parent="Node2D/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+theme_override_fonts/font = ExtResource("29_32vby")
+theme_override_font_sizes/font_size = 8
+text = "Yes
+"
+
+[node name="ExitButton" type="Button" parent="Node2D/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+theme_override_fonts/font = ExtResource("29_32vby")
+theme_override_font_sizes/font_size = 8
+text = "No"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fcumg")
+}

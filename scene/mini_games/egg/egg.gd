@@ -14,7 +14,7 @@ var count: int = 0
 func _ready():
 	scene_timer.timeout.connect(_on_scene_ended)
 
-func _process(delta):
+func _process(_delta):
 	progress_bar.value = scene_timer.time_left
 	
 func _catch():

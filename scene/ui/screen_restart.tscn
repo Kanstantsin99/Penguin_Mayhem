@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://qilfpsqx575x"]
+
+[ext_resource type="Script" path="res://scene/ui/screen_restart.gd" id="1_mibho"]
+[ext_resource type="FontFile" uid="uid://cfoav24nweskk" path="res://assets/fonts/ark_@somepx/Ark.ttf" id="2_uspy5"]
+
+[node name="ScreenRestart" type="CanvasLayer"]
+script = ExtResource("1_mibho")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 85.0
+offset_bottom = 62.0
+size_flags_vertical = 1
+text = "Try again?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="YourScore" type="Label" parent="."]
+offset_left = -6.0
+offset_top = 3.0
+offset_right = 78.0
+offset_bottom = 51.0
+size_flags_vertical = 1
+text = "Your score: "
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 29.0
+offset_right = 84.0
+offset_bottom = 48.0
+size_flags_vertical = 8
+theme_override_constants/separation = 3
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+theme_override_fonts/font = ExtResource("2_uspy5")
+theme_override_font_sizes/font_size = 8
+text = "Yes
+"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+mouse_filter = 2
+theme_type_variation = &"SmallButton"
+theme_override_fonts/font = ExtResource("2_uspy5")
+theme_override_font_sizes/font_size = 8
+text = "No"

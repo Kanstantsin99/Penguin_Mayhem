@@ -20,7 +20,7 @@ func _ready():
 	area_2d_circle.area_entered.connect(_on_area_2d_area_entered)
 	area_2d_circle.area_exited.connect(_on_area_2d_area_exited)
 
-func _process(delta):
+func _process(_delta):
 	if rotate:
 		circle.rotation_degrees = (circle.rotation_degrees + 40 * (difficulty * 0.25))
 	progress_bar.value = scene_timer.time_left
@@ -38,10 +38,10 @@ func _process(delta):
 			GlobalAudioPlayer._play("res://assets/audio/hit2.wav")
 			#print("loose")
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	enter = true
 
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_exited(_area):
 	enter = false
 
 func _on_scene_ended():

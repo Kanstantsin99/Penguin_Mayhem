@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://pstqes7jcym2"]
+[gd_scene load_steps=10 format=3 uid="uid://pstqes7jcym2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nrtmp"]
 [ext_resource type="Script" path="res://scene/manager/level_manager.gd" id="2_0q6xf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsbe7rei2vqty" path="res://scene/component/screen_transition.tscn" id="3_j6cxs"]
 [ext_resource type="PackedScene" uid="uid://d244nt5rlno1u" path="res://scene/ui/level_result.tscn" id="5_0oj1x"]
 [ext_resource type="PackedScene" uid="uid://bntx0mph1moph" path="res://scene/ui/screen_guidance.tscn" id="5_gdh7e"]
+[ext_resource type="PackedScene" uid="uid://qilfpsqx575x" path="res://scene/ui/screen_restart.tscn" id="6_3pbaq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l502v"]
 viewport_path = NodePath("SubViewportContainer/Screen")
@@ -49,6 +50,8 @@ script = ExtResource("2_0q6xf")
 visible = false
 
 [node name="ScreenGuidance" parent="SubViewportContainer/Screen/LevelManager" instance=ExtResource("5_gdh7e")]
+
+[node name="ScreenRestart" parent="SubViewportContainer/Screen/LevelManager" instance=ExtResource("6_3pbaq")]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true

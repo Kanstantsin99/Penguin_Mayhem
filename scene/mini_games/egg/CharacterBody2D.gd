@@ -15,7 +15,7 @@ func _body_entered(node):
 	node.free()
 	main._catch()
 
-func _process(delta):
+func _process(_delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED

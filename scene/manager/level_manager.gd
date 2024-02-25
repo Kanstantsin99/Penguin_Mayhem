@@ -38,6 +38,7 @@ var minigame = {
 @onready var screen_transition: CanvasLayer = $ScreenTransition
 @onready var level_result: CanvasLayer = $LevelResult
 @onready var screen_guidance: CanvasLayer = $ScreenGuidance
+@onready var screen_restart: CanvasLayer = $ScreenRestart
 
 
 func _ready() -> void:
@@ -86,6 +87,28 @@ func run_next_game():
 			return
 
 
+func restart():
+	screen_transition.transition_in()
+	for game in minigame:
+		minigame[game].difficulty = 1
+	lives = 4
+	current_scene.name = "MainMenu"
+	level_result.score_val = 0
+	await screen_transition.transition_halfway
+	level_result.show_result(lives)
+	await level_result.showed
+	screen_transition.transition_out()
+	run_next_game()
+
+
+func _continue():
+	if current_scene.get_parent():
+		current_scene.get_parent().remove_child(current_scene)
+	current_scene.name = "MainMenu"
+	run_next_game()
+
+
+
 # Shows LevelResult with transitions
 # checks if lives > 0
 # removes child from a LevelManager
@@ -97,11 +120,15 @@ func _on_result(result):
 		GlobalAudioPlayer._play("res://assets/audio/negative1.wav")
 		lives -= 1
 		if lives == 0:
-			# NOTE: Here transition to end screen is needed
 			await screen_transition.transition_halfway
 			level_result.show_result(lives)
 			await level_result.showed
-			get_tree().quit()
+			screen_transition.transition_out()
+			screen_restart.score = level_result.score_val
+			screen_restart._show()
+			if current_scene.get_parent():
+				current_scene.get_parent().remove_child(current_scene)	
+			return
 	
 	if current_scene.get_parent():
 		current_scene.get_parent().remove_child(current_scene)
@@ -110,4 +137,9 @@ func _on_result(result):
 	level_result.show_result(lives)
 	await level_result.showed
 	screen_transition.transition_out()
+	
+	if level_result.score_val == 16:
+		switch_scene("res://scene/ui/ending.tscn")
+		return
+	
 	run_next_game()

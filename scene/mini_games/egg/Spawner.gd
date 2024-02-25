@@ -3,7 +3,7 @@ extends Node2D
 var egg = preload("res://scene/mini_games/egg/egg_rb.tscn")
 var rng = RandomNumberGenerator.new()
 var amount: int
-var max: int
+var max_val: int
 
 @onready var main = $".."
 
@@ -12,19 +12,19 @@ var objectarray = []
 func _ready():
 	#objectarray = null
 	amount = 0
-	max = main.difficulty + 1
+	max_val = main.difficulty + 1
 	spawn()
 
 func timer():
-	var timer = Timer.new()
-	add_child(timer)
-	timer.wait_time = 0.75 #/ main.difficulty
-	timer.one_shot = true
-	timer.start()
-	timer.timeout.connect(_on_timer_timeout)
+	var my_timer = Timer.new()
+	add_child(my_timer)
+	my_timer.wait_time = 0.75 #/ main.difficulty
+	my_timer.one_shot = true
+	my_timer.start()
+	my_timer.timeout.connect(_on_timer_timeout)
 
 func _on_timer_timeout():
-	if amount < max:
+	if amount < max_val:
 		spawn()
 
 func spawn():
