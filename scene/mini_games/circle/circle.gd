@@ -22,20 +22,21 @@ func _ready():
 
 func _process(delta):
 	if rotate:
-		circle.rotation_degrees = (circle.rotation_degrees + 40 * (difficulty * 0.5))
+		circle.rotation_degrees = (circle.rotation_degrees + 40 * (difficulty * 0.25))
 	progress_bar.value = scene_timer.time_left
 	if Input.is_action_just_pressed("ui_accept"):
 		rotate = false
 		player.play("attack")
 		aaa.visible = true
 		aaa.play("aaa")
-		GlobalAudioPlayer._play("res://assets/audio/shot.wav")
 		if enter:
 			norm = true
+			GlobalAudioPlayer._play("res://assets/audio/shot.wav")
 			#print("win")
 		else:
+			norm = false
+			GlobalAudioPlayer._play("res://assets/audio/hit2.wav")
 			#print("loose")
-			pass
 
 func _on_area_2d_area_entered(area):
 	enter = true

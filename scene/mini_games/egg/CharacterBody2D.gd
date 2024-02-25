@@ -11,6 +11,7 @@ func _ready():
 	area_2d.body_entered.connect(_body_entered)
 
 func _body_entered(node):
+	GlobalAudioPlayer._play("res://assets/audio/shot.wav")
 	node.free()
 	main._catch()
 

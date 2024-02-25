@@ -21,7 +21,7 @@ func _catch():
 	count = count + 1
 	
 func _on_scene_ended():
-	if count == difficulty:
+	if count >= difficulty:
 		norm = true
 	else:
 		norm = false
