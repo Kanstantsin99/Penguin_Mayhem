@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://p3yfjxhof3xf"]
+
+[ext_resource type="Script" path="res://scene/mini_games/egg/egg.gd" id="1_kfjd2"]
+[ext_resource type="Texture2D" uid="uid://h314vt85tlxm" path="res://scene/mini_games/egg/sky.png" id="1_mx5f2"]
+[ext_resource type="Script" path="res://scene/mini_games/egg/Sky.gd" id="2_q51pv"]
+[ext_resource type="Texture2D" uid="uid://b5i8x45r1yl8" path="res://scene/mini_games/egg/back.png" id="2_t2eow"]
+[ext_resource type="Texture2D" uid="uid://be2rhip3s4tgx" path="res://scene/mini_games/egg/penguin.png" id="4_bj1ul"]
+[ext_resource type="Script" path="res://scene/mini_games/egg/CharacterBody2D.gd" id="5_kaqqk"]
+[ext_resource type="Script" path="res://scene/mini_games/egg/Spawner.gd" id="6_xobx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjy7h"]
+size = Vector2(84, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nie7h"]
+size = Vector2(8.5, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ftyf"]
+atlas = ExtResource("4_bj1ul")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2tdf"]
+atlas = ExtResource("4_bj1ul")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ly0bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ftyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2tdf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0p7"]
+size = Vector2(11, 13)
+
+[node name="Egg" type="Node"]
+script = ExtResource("1_kfjd2")
+
+[node name="Sky" type="Node2D" parent="."]
+position = Vector2(-40, 6)
+script = ExtResource("2_q51pv")
+
+[node name="Sky" type="Sprite2D" parent="Sky"]
+texture = ExtResource("1_mx5f2")
+centered = false
+
+[node name="Sky2" type="Sprite2D" parent="Sky"]
+position = Vector2(72, -4)
+texture = ExtResource("1_mx5f2")
+centered = false
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("2_t2eow")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Back"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back/StaticBody2D"]
+position = Vector2(42, 46)
+shape = SubResource("RectangleShape2D_wjy7h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Back/StaticBody2D"]
+position = Vector2(-3.75, 23)
+shape = SubResource("RectangleShape2D_nie7h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Back/StaticBody2D"]
+position = Vector2(88, 23)
+shape = SubResource("RectangleShape2D_nie7h")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_kaqqk")
+
+[node name="Penguin" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(49, 38)
+sprite_frames = SubResource("SpriteFrames_ly0bw")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(48.5, 39.5)
+shape = SubResource("RectangleShape2D_1f0p7")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D/Area2D"]
+polygon = PackedVector2Array(41, 30, 55, 30, 51, 33, 45, 33)
+
+[node name="SceneTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 5.0
+step = 0.25
+value = 5.0
+show_percentage = false
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(0, 5)
+script = ExtResource("6_xobx5")

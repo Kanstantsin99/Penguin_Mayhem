@@ -28,6 +28,10 @@ window/size/window_width_override=1680
 window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="nokia6jam"
+
 [editor]
 
 movie_writer/mjpeg_quality=0.5
