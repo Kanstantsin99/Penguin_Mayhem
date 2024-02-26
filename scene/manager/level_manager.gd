@@ -109,7 +109,7 @@ func restart():
 func _continue():
 	if current_scene.get_parent():
 		current_scene.get_parent().remove_child(current_scene)
-	current_scene.name = "MainMenu"
+	current_scene.name = "EggReborn"
 	run_next_game()
 
 
@@ -143,7 +143,7 @@ func _on_result(result):
 	await level_result.showed
 	screen_transition.transition_out()
 	
-	if level_result.score_val == 16:
+	if level_result.score_val == 20:
 		switch_scene("res://scene/ui/ending.tscn")
 		return
 	
